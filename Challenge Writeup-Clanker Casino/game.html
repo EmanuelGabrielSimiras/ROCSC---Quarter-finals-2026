@@ -1,0 +1,12 @@
+<div class="hud">
+    <span>UNIT: {{ current_user.username }}</span>
+    <span>COINS: {{ current_user.coins }}</span>
+</div>
+
+{% if current_user.coins >= 200 %}
+<p>FLAG: {{ flag }}</p>
+{% endif %}
+
+<div class="captcha-container">
+    {{ captcha_html }}
+</div>
