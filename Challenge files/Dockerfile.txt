@@ -1,0 +1,9 @@
+FROM python:3.13-slim
+RUN apt-get update && apt-get install -y --no-install-recommends socat && rm -rf /var/lib/apt/lists/*
+WORKDIR /srv
+RUN pip install --no-cache-dir RestrictedPython numpy==2.3.5
+COPY flag.txt /flag.txt
+COPY jail.py /jail.py
+RUN chown root:root /flag.txt /jail.py && chmod 000 /flag.txt
+EXPOSE 1337
+CMD ["sh","-c","socat -T60 TCP-LISTEN:1337,reuseaddr,fork EXEC:'python3 /jail.py',pty,stderr"]
