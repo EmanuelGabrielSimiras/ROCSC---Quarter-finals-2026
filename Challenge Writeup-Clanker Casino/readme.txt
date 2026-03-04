@@ -1,5 +1,3 @@
-iată un writeup scurt și simplist, fără diacritice sau majuscule, gata de copy-paste:
-
 challenge writeup: clanker casino
 
 1. descriere
@@ -20,4 +18,5 @@ pariaza rapid de 8 ori la rand dubland miza (1, 2, 4, 8... 128) fara sa complete
 daca toate ies "heads", balanta trece de 200 si flag-ul apare in pagina.
 
 4. concluzie
+
 chiar daca site-ul avea protectii vizuale, am reusit sa trecem de ele folosind o eroare de programare in backend. dupa aproximativ 300 de incercari, scriptul a nimerit seria norocoasa si a extras flag-ul.
