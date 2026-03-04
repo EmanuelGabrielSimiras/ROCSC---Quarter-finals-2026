@@ -1,13 +1,12 @@
-# Just a jail with numbers - Writeup
+just a jail with numbers - writeup
+analiza vulnerabilitatii
+sandbox-ul a incercat sa blocheze accesul la functii periculoase prin filtrarea modulului numpy. totusi, filtrarea a fost superficiala (shallow copy), permitand accesul la submodulele interne.
 
-## Analiza Vulnerabilității
-Sandbox-ul a încercat să blocheze accesul la funcții periculoase prin filtrarea modulului `numpy`. Totuși, filtrarea a fost superficială (shallow copy), permițând accesul la submodulele interne.
+exploatare
+1. bypass restrictedpython: am evitat utilizarea caracterului _ (underscore) pentru a trece de filtrul de compilare.
 
-## Exploatare
-1. **Bypass RestrictedPython**: Am evitat utilizarea caracterului `_` (underscore) pentru a trece de filtrul de compilare.
-2. **Bypass NumPy Blacklist**: Am folosit `np.core.records.fromfile`, o funcție care nu a fost inclusă în lista `BLOCKS`.
-3. **Exfiltrare prin Error Side-Channel**: Deoarece clasa `Print` era defectă, am forțat o eroare `int()` pentru a afișa conținutul fișierului în mesajul de eroare.
+2. bypass numpy blacklist: am folosit np.core.records.fromfile, o functie care nu a fost inclusa in lista blocks.
 
-## Cum se rulează exploit-ul
-```bash
-python3 exploit.py
+3. exfiltrare prin error side-channel: deoarece clasa print era defecta, am fortat o eroare int() pentru a afisa continutul fisierului in mesajul de eroare.
+
+ Rulare exploit - python3 exploit.py
