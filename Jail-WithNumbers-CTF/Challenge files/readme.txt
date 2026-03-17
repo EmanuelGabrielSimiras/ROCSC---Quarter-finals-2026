@@ -8,6 +8,3 @@ Sandbox-ul a încercat să blocheze accesul la funcții periculoase prin filtrar
 2. **Bypass NumPy Blacklist**: Am folosit `np.core.records.fromfile`, o funcție care nu a fost inclusă în lista `BLOCKS`.
 3. **Exfiltrare prin Error Side-Channel**: Deoarece clasa `Print` era defectă, am forțat o eroare `int()` pentru a afișa conținutul fișierului în mesajul de eroare.
 
-## Cum se rulează exploit-ul
-```bash
-python3 exploit.py
