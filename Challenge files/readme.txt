@@ -9,4 +9,3 @@ exploatare
 
 3. exfiltrare prin error side-channel: deoarece clasa print era defecta, am fortat o eroare int() pentru a afisa continutul fisierului in mesajul de eroare.
 
- Rulare exploit - python3 exploit.py
